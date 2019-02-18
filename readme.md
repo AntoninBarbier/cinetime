@@ -13,4 +13,5 @@ Dans le dossier téeléchargé:
 
 Pour la base de données:
 * Avoir MongoDB installé, l'exécuter (exemple ici pour Windows avec la version 4.0 de MongoDB): "C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe"
+* Avoir un dossier data contenant un dossier db à la racine du disque où est installé MongoDB
 * Mongoose devrait directement créer la base grâce au nom spécifié dans le fichier src/node/app.js (fonction mongoose.connect)
