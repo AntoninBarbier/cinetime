@@ -1,10 +1,10 @@
 <template>
     <v-dialog max-width="600px" v-model="dialog">
-        <v-btn fab light class="primary" slot="activator" fixed bottom><v-icon>add</v-icon></v-btn>
+        <v-btn fab light class="primary" slot="activator" fixed bottom right><v-icon>add</v-icon></v-btn>
         <v-card>
             <v-card-text>
                 <v-form class="px-3">
-                    <v-text-field label="Name" v-model="newMovie.name"></v-text-field>
+                    <v-text-field label="Titre" v-model="newMovie.name"></v-text-field>
                     <v-text-field label="Année de sortie" v-model="newMovie.releaseYear"></v-text-field>
                     <v-text-field label="Langue" v-model="newMovie.language"></v-text-field>
                     <v-text-field label="Nom réalisateur" v-model="newMovie.directorName"></v-text-field>
@@ -12,12 +12,13 @@
                     <v-text-field label="Date de naissance du réalisateur" v-model="newMovie.directorBirthdate"></v-text-field>
                     <v-text-field label="Genre" v-model="newMovie.genre"></v-text-field>
                     <v-rating v-model="newMovie.rating"></v-rating>
-
+                    <v-text-field label="URL du poster du film" v-model="newMovie.posterURL"></v-text-field>
                     <v-container fluid>
 				        <v-flex xs12 class="text-xs-center text-sm-center text-md-center text-lg-center">
 					    <img :src="imageUrl" height="150" v-if="imageUrl"/>
 					    <v-text-field label="Select Image" @click='pickFile' v-model='imageName' prepend-icon='attach_file'></v-text-field>
                             <input
+                                name="moviePoster"
                                 type="file"
                                 style="display: none"
                                 ref="image"
@@ -55,6 +56,7 @@ export default {
                 directorNationality: '',
                 directorBirthdate: '',
                 genre: '',
+                posterURL: ''
             },
             dialog: false,
             imageName: '',

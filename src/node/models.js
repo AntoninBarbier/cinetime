@@ -26,6 +26,9 @@ const MovieSchema = new Schema({
     },
     rating: {
         type: Number
+    },
+    posterURL: {
+        type: String
     }
 })
 

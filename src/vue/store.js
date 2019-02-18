@@ -43,7 +43,7 @@ export const store = new VueX.Store({
             })
         },
         editMovieInApi({dispatch}, data) {
-            axios.put(`${url}${data._id}`).then(() => {
+            axios.put(`${url}${data._id}`, data).then(() => {
                 dispatch("getSingleMovieFromApi", { id: data._id });
                 dispatch("getMoviesFromApi");
                 router.push(`/movie/${data._id}`)

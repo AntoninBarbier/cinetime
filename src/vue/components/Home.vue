@@ -1,17 +1,20 @@
 <template>
-    <v-container px-0>
+    <v-container>
+        <v-container>
+        <v-toolbar mb-4>
             <select v-model="search.field">
                 <option value="name">Titre</option>
                 <option value="releaseYear">Année</option>
                 <option value="genre">Genre</option>
                 <option value="directorName">Réalisateur</option>
             </select>
-            
-                <input type="text" v-model="search.value" placeholder="Search Movie...">
-                <div>
-                    <movie-item v-for="(movie, index) in resultMovies" :key="movie._id" :index="index" :movie="movie"></movie-item>
-                </div>
-            <movie-add/>
+            <input type="text" id="search" v-model="search.value" placeholder="Search Movie...">
+        </v-toolbar>
+        </v-container>
+        <v-layout row wrap>
+            <movie-item v-for="(movie, index) in resultMovies" :key="movie._id" :index="index" :movie="movie"></movie-item>
+        </v-layout>
+        <movie-add/>
     </v-container>
 </template> 
 
@@ -70,3 +73,11 @@ export default {
 }
 
 </script>
+
+<style>
+
+#search {
+    width: 100%;
+}
+
+</style>
